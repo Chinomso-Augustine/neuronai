@@ -1,5 +1,3 @@
-import { getPublicPath } from '../app/pathUtils.js';
-
 const usefulLinks = [
   {
     label: 'Products & Services',
@@ -47,7 +45,7 @@ function Footer({ onNavigate }) {
         <div>
           <a
             className="inline-flex items-center gap-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-500"
-            href={getPublicPath('/')}
+            href="/"
             onClick={(event) => handleFooterLinkClick(event, '/')}
           >
             <span className="grid h-20 w-20 place-items-center rounded-full border border-white/40 bg-white/90 text-2xl font-bold text-[#1e2a66] shadow-sm">
@@ -97,7 +95,7 @@ function Footer({ onNavigate }) {
                 <li key={link.label}>
                   <a
                     className="group inline-flex items-center gap-3 transition-colors hover:text-orange-500 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-500"
-                    href={getPublicPath(link.path)}
+                    href={link.path}
                     onClick={(event) =>
                       handleFooterLinkClick(event, link.path)
                     }
