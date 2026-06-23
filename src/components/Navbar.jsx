@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { getPublicPath } from '../app/pathUtils.js';
 import { routes } from '../app/routes.js';
 
 function Navbar({ currentPath, onNavigate }) {
@@ -44,7 +45,7 @@ function Navbar({ currentPath, onNavigate }) {
                       ? 'text-orange-500 after:scale-x-100'
                       : 'text-white'
                   }`}
-                  href={path}
+                  href={getPublicPath(path)}
                   onClick={(event) => handleClick(event, path)}
                 >
                   {label}
@@ -103,7 +104,7 @@ function Navbar({ currentPath, onNavigate }) {
                       ? 'border-orange-500 text-orange-500'
                       : 'border-transparent text-white'
                   }`}
-                  href={path}
+                  href={getPublicPath(path)}
                   onClick={(event) => handleClick(event, path)}
                 >
                   {label}

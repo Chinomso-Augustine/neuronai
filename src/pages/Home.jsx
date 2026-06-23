@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { getPublicPath } from '../app/pathUtils.js';
 import heroImage from '../assets/images/Hero.PNG';
 
 const heroStats = [
@@ -122,7 +123,7 @@ const insightChannels = [
     description:
       "Dive into our latest blog to see how it's unlocking faster, smarter, and more powerful tech experiences.",
     action: 'Read Blogs',
-    href: '/blogs',
+    href: '/our-media',
   },
   {
     title: 'Latest Podcast',
@@ -255,7 +256,7 @@ function InsightCarousel() {
               </p>
               <a
                 className="mt-8 inline-flex min-h-12 items-center justify-center rounded-lg bg-orange-500 px-6 text-base font-semibold text-white transition-colors hover:bg-[#1e2a66] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-500"
-                href={channel.href}
+                href={getPublicPath(channel.href)}
                 rel={channel.href.startsWith('http') ? 'noreferrer' : undefined}
                 target={channel.href.startsWith('http') ? '_blank' : undefined}
               >
@@ -326,7 +327,7 @@ function Home() {
           </p>
           <a
             className="mt-10 inline-flex min-h-12 items-center justify-center rounded-lg border border-orange-500 bg-orange-500 px-7 text-base font-semibold text-white transition-colors hover:bg-white hover:text-orange-500 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-500"
-            href="/about-neuron-edge-ai"
+            href={getPublicPath('/about')}
           >
             Learn More
           </a>
@@ -364,7 +365,7 @@ function Home() {
           </p>
           <a
             className="mt-8 inline-flex min-h-12 items-center justify-center rounded-lg bg-orange-500 px-7 text-base font-semibold text-white transition-colors hover:bg-[#1e2a66] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-500"
-            href="/about-neuron-edge-ai"
+            href={getPublicPath('/about')}
           >
             Learn More
           </a>
@@ -494,7 +495,7 @@ function Home() {
                 </p>
                 <a
                   className="mt-6 inline-flex min-h-11 w-fit items-center justify-center rounded-lg border border-orange-500 px-5 text-sm font-bold uppercase text-orange-500 transition-colors hover:bg-orange-500 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-500"
-                  href={solution.href}
+                  href={getPublicPath(solution.href)}
                 >
                   Learn More
                 </a>
@@ -529,7 +530,7 @@ function Home() {
                 </p>
                 <a
                   className="mt-6 inline-flex min-h-11 w-fit items-center justify-center rounded-lg border border-orange-500 px-5 text-sm font-bold uppercase text-orange-500 transition-colors hover:bg-orange-500 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-orange-500"
-                  href={solution.href}
+                  href={getPublicPath(solution.href)}
                 >
                   Learn More
                 </a>
@@ -601,7 +602,7 @@ function Home() {
             </div>
             <a
               className="inline-flex min-h-12 w-fit items-center justify-center rounded-lg bg-orange-500 px-7 text-base font-semibold text-white transition-colors hover:bg-white hover:text-[#1e2a66] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
-              href="/contact-us"
+              href={getPublicPath('/contact-us')}
             >
               Contact Us
             </a>
