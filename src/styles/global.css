@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@keyframes tech-grid-drift {
+  0% {
+    background-position:
+      0 0,
+      0 0;
+  }
+  100% {
+    background-position:
+      56px 56px,
+      -56px 56px;
+  }
+}
+
+@keyframes tech-beam-scan {
+  0% {
+    transform: translateX(-30%);
+  }
+  100% {
+    transform: translateX(30%);
+  }
+}
+
+@keyframes tech-node-pulse {
+  0%,
+  100% {
+    opacity: 0.28;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.04);
+  }
+}
+
+.tech-grid-motion {
+  animation: tech-grid-drift 16s linear infinite;
+  background-image:
+    linear-gradient(rgba(30, 42, 102, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 42, 102, 0.12) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.tech-beam-motion {
+  animation: tech-beam-scan 8s ease-in-out infinite alternate;
+}
+
+.tech-node-motion {
+  animation: tech-node-pulse 3.4s ease-in-out infinite;
+}
